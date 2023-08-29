@@ -69,10 +69,12 @@ for hut_id in range(1, MAX_ID):
         #2 Zimmer (?)
         #4 Matratzenlager
         #5 Mehrbettzimmer
+        #6 zweierzimmer
         #13 Doppelzimmer
         #14 4er Zimmer
         #15 6-er zimmer
         #18 Spezialzimmer
+        #20 einzelzimmer
         for night in r.json()[f"{j}"]:
             if night["bedCategoryType"] != "ROOM": continue
             if night["freeRoom"] < PERSONS: continue
