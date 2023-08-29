@@ -64,13 +64,14 @@ for hut_id in range(1, MAX_ID):
     # iterate over date range
     for j in range(NIGHTS):
         # iterate over available room classes
-        # TODO: figure out room types
+        # TODO: figure out bedCategoryId:
         #1 Massenlager
         #2 Zimmer (?)
         #4 Matratzenlager
         #5 Mehrbettzimmer
         #13 Doppelzimmer
         #14 4er Zimmer
+        #15 6-er zimmer
         #18 Spezialzimmer
         for night in r.json()[f"{j}"]:
             if night["bedCategoryType"] != "ROOM": continue
