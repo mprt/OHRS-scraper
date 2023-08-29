@@ -67,6 +67,8 @@ for hut_id in range(1, MAX_ID):
         # TODO: figure out room types
         #1 Massenlager
         #2 Zimmer (?)
+        #4 Matratzenlager
+        #5 Mehrbettzimmer
         #13 Doppelzimmer
         #14 4er Zimmer
         #18 Spezialzimmer
