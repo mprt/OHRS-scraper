@@ -54,7 +54,8 @@ for hut_id in range(1, MAX_ID):
 
     # get JSON
     # this contains availability information for the 14 days after the START_DATE
-    # the hut_id is selected by the previous request. hence we have to reuse the session cookie!
+    # the hut_id is selected by the previous request. hence we have to reuse
+    # the session cookie!
     r = session.get(URL + f"/selectDate?date={START_DATE}")#not necessary? , cookies = r.cookies)
 
     # number of nights with free beds for all persons
@@ -74,7 +75,8 @@ for hut_id in range(1, MAX_ID):
     if freenights == NIGHTS:
 
         # parse some more data
-        height = int(re.search(r'(?<=Height above sea level: )\d+', t)[0])
+        height = re.search(r'(?<=Height above sea level: )[0-9\.]+', t)[0]
+        height = int( height.replace(".","").replace("'","") )
         coordinates = re.search(r'(?<=Coordinates: ).+(?=</)', t)[0]
         coordinates = coordinates.replace("’","'").replace("′","'").replace(",",".")
 
