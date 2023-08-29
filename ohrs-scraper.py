@@ -75,7 +75,7 @@ for hut_id in range(1, MAX_ID):
     if freenights == NIGHTS:
 
         # parse some more data
-        height = re.search(r'(?<=Height above sea level: )[0-9\.]+', t)[0]
+        height = re.search(r"(?<=Height above sea level: )[0-9\.']+", t)[0]
         height = int( height.replace(".","").replace("'","") )
         coordinates = re.search(r'(?<=Coordinates: ).+(?=</)', t)[0]
         coordinates = coordinates.replace("’","'").replace("′","'").replace(",",".")
