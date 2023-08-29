@@ -65,6 +65,11 @@ for hut_id in range(1, MAX_ID):
     for j in range(NIGHTS):
         # iterate over available room classes
         # TODO: figure out room types
+        #1 Massenlager
+        #2 Zimmer (?)
+        #13 Doppelzimmer
+        #14 4er Zimmer
+        #18 Spezialzimmer
         for night in r.json()[f"{j}"]:
             if night["bedCategoryType"] != "ROOM": continue
             if night["freeRoom"] < PERSONS: continue
